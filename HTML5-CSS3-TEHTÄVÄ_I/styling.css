@@ -1,0 +1,276 @@
+*
+{
+    /*laitetaan border box että kaikki asettuu sivun sisälle*/
+    box-sizing: border-box;
+}
+
+main{
+    /*laitetaan mainille flex ja width että tekstit asettuvat vierekkäin*/
+    display: flex;
+    width: 67%;
+}
+
+#sailio{
+    /*tehdään reunat sivustolle*/
+    border: 3px solid #00008b;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#tiedot-ei-dropdown{
+    /*luodaan oikean näköinen yläpalkki jos se mahtuu ilman dropdown osiota*/
+    font-size: 19px;
+    width: 100%;
+    text-align: right;
+    background-color: #add8e6;
+    padding: 5px;
+    line-height: 1.2;
+    border-bottom: 3px solid #00008b;
+}
+
+#tiedot-ei-dropdown a{
+    /*poistetaan yläpalkin linkeistä alla oleva viiva ja laitetaan teksteihin väliä*/
+    text-decoration: none;
+    display: inline-block;
+    padding: 3px;
+}
+
+#tiedot-dropdown{
+    /*luodaan oikean näköinen yläpalkki jos se tarvitsee dropdown osion (tässä vaiheessa laitetaan se pois näkyvistä*/
+    display: none;
+    border-bottom: 3px solid #00008b;
+    width: 100%;
+    background-color: #add8e6;
+    padding: 5px;
+    font-size: 19px;
+    list-style: none;
+}
+
+h1{
+    /*muokataan otsikko oikean näköiseksi*/
+    margin: 0;
+    text-align: center;
+    font-size: 25px;
+    color: #add8e6;
+    border-top: 3px solid #00008b;
+    padding: 40px;
+    background-image: linear-gradient(#00008b, white);
+}
+
+header{
+    display: block;
+}
+
+nav{
+    /*luodaan navigaatio osuuden ympärille laatikko*/
+    border-top: 3px solid #00008b;
+    color: white;
+    width: 100%;
+    display: inline-block;
+    background-color: black;
+}
+
+.paanavi{
+    /*laitetaan pää navin listan osiot vierekkäin*/
+    width: 100%; /*100% on maksimi leveys*/
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    list-style: none;
+}
+
+.paanavi >li{ /*laita > jos et halua alivalikon li mukaan*/
+    /*muutetaan päänavin sisäiset listan oliot haluttuun muotoon*/
+    font-size: 15.5px;
+    display: inline-block; /*sopuisa, voi määritellä leveyden ja paddingin*/
+    width: 9%;
+}
+
+.paanavi >li:hover .alivalikko{
+    /*laitetaan pudotuslaatikko esiin kun käyttäjä on vuorovaikutuksessa sen kanssa*/
+    display: block;
+}
+
+.alivalikko{
+    /*luodaan pudotuslaatikko haluutn näköiseksi*/
+    display: none;
+    line-height: 1.7;
+    list-style: none;
+    margin: 10px;
+    border: 3px solid white;
+    padding: 10px;
+    position: absolute;
+    background-color: black;
+    box-shadow: 10px 9px 5px grey;
+}
+
+article{
+    /*laitetaan artikkelit toistensa viereen*/
+    width: 50%;
+    text-align: left;
+    margin: 10px;
+}
+
+
+aside{
+    /*tehdään sivupalkki halutun näköiseksi*/
+    margin: 15px;
+    width: 33%;
+    list-style: none;
+    background-color: #add8e6;
+}
+
+
+aside li{
+    /*otetaan sen lista olioista pois ala viiva ja laitetaan ne halutulla tavalla*/
+    color: #00008b;
+    text-decoration: none;
+    text-align: left;
+}
+
+aside h2{
+    /*tehdään sivu osion otsiokoista toivotun näköisiä*/
+    margin-top: 0;
+    background-color: #00008b;
+    padding: 10px;
+    color: #add8e6;
+    text-align: left;
+}
+
+#sisalto{
+    /*laitetaan sisällölle flex, jotta sivupalkki menee tekstien viereen*/
+    display: flex;
+}
+
+footer{
+    /*luodaan ala osiosta toivotun näköinen*/
+    text-align: center;
+    color: white;
+    background-color: black;
+    padding: 6px;
+}
+
+@media only screen and (max-width: 800px) {
+    #sisalto{
+        display: block; /*laittaa flexin pois päältä jolloin asiat ei mene enää vierekkäin*/
+    }
+
+    main{
+        /*laitetaan main 100% että sivu palkki ei mene enää tekstien kanssa vierekkäin*/
+        width: 100%;
+    }
+
+    aside{
+        display: flex;
+        width: 100%;
+        margin: 0;
+    }
+
+    section{
+        /*muutetaan sivu palkkia siten, että sen osat menee vierekkäin*/
+        width: 33%;
+        padding: 10px;
+    }
+
+    h1{
+        /*laitetaan otsikko oikealle kohdalle*/
+        padding: 60px;
+    }
+}
+
+@media only screen and (max-width: 651px){
+    main{
+        /*laitetaan mainista pois flex, että kaikki osat menevät allekkain*/
+        display: block;
+    }
+
+    #tiedot-ei-dropdown{
+        /*laitetaan tiedot joissa ei ole dropdown osiota pois päältä*/
+        display: none;
+    }
+
+    #tiedot-dropdown{
+        /*laitetaan näkyviin tiedot joissa on dropdown*/
+        display: block;
+    }
+
+    article{
+        /*muutetaan artikkeleja siten, että ne ottavat itselleen koko tilan, koska ne eivät enää ole vierekkäin*/
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+        border-bottom: 3px solid #00008b;
+    }
+
+    article:last-child{ /*viimeinen lapsi eli alin osa*/
+        /*otetaan artikkelin ala osasta reunus pois*/
+        border-bottom: none;
+    }
+
+    #tiedot-dropdown{
+        /*otetaan dropdown tiedoista padding pois, jotta se näyttää siltä miltä pitää*/
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    h1{
+        /*muutetaan otsikko sen verran isoksi, että sen näkee*/
+        font-size: 50px;
+    }
+
+    aside{
+        /*laitetaan sivu osio allekkain*/
+        display: block;
+        width: 100%;
+    }
+
+    section{
+        /*laitetaan section osat allekkain*/
+        width: 100%;
+        padding: 0;
+    }
+
+    aside ul{
+        /*laitetaan sivu osan lista oliot oikein*/
+        margin-bottom: 0;
+        padding-bottom: 10px;
+    }
+
+    .paanavi{
+        /*laitetaan pää navin osat allekkain*/
+        display: block;
+        margin: 0;
+        padding: 10px;
+    }
+
+    .paanavi li{
+        width: 100%;
+        padding: 4px;
+    }
+
+    .alivalikko{
+        /*otetaan alivalikosta laatikko pois ja tehdään siitä vain tekstiä*/
+        position: relative;
+        border: none;
+        box-shadow: none;
+        padding-right: 10px;
+        padding-right: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin: 2px;
+    }
+
+    .alivalikko li{
+        /*laitetaan alivalikon lista oliot oikein*/
+        font-size: 20px;
+        padding: 0;
+    }
+
+    .paanavi >li{
+        font-size: 20px;
+    }
+
+
+}
