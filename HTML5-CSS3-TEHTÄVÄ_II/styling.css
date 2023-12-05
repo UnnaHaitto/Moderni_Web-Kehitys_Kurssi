@@ -1,0 +1,359 @@
+*
+{
+    /*laitetaan border box että kaikki asettuu sivun sisälle*/
+    box-sizing: border-box;
+}
+
+body{
+    /*laitetaan kuva taustaksi ja muutetaan kaiken tekstin fontti*/
+    background-image: url("Kuvat/christmas-bg.png");
+    background-repeat: repeat;
+    font-family: 'Titillium Web';
+}
+
+#sisalto{
+    /*määrätään sivuaton koko ja tyyli asiat*/
+    max-width: 1000px;
+    background-color: white;
+    border-radius: 15px 15px 15px 15px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    padding-top: 15px;
+}
+
+
+#yla-osa img{
+    /*laitetaan turhat kuvat pois päältä*/
+    display: none;
+}
+
+#yla-osa{
+    background-color: #a0181c;
+    border-radius: 15px 15px 0px 0px;
+    margin-bottom: 10px;
+}
+
+header img{
+    /*tässäkin turhat kuvat pois*/
+    display: none;
+}
+
+h1{
+    /*vaihdetaan otsikon fontti ja laitetaan se laatikkoon*/
+    font-weight: 900;
+    font-family: ‘Merriweather’, Georgia, serif;
+    font-size: 50px;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    margin: 0;
+}
+
+main article h2{
+    /*muokataan artikkelien otsikkoja*/
+    font-family: ‘Merriweather’, Georgia, serif;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+}
+
+main article{
+    /*luodaan artikkeleille reunat*/
+    border: 3px dotted #a0181c;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.ajankohtaista h2{
+    /*tehdään ajankohtaista osion otsikko oikean näköiseksi ja laitetaan se laatikkoon*/
+    text-align: center;
+    width: 100%;
+    background-image: linear-gradient(to right, white, #a0181c, white);
+    padding: 5px;
+    border: 3px solid #a0181c;
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+.ajankohtaista{
+    /*laitetaan ajankohtaista laatikolle reunukset*/
+    border: 3px dotted #a0181c;
+    padding: 10px;
+    width: 100%;
+}
+
+.ajankohtaista .ajankohtainen{
+    /*tämä ettei kuvat pysyy oikeassa kohdassa*/
+    clear: both;
+}
+
+.ajankohtainen img{
+    /*laitetaan kuva ja tekstit vierekkäin*/
+    float: left; 
+    padding-right: 10px;
+}
+
+
+.meista-sanottua{
+    /*laitetaan rajat meistä sanottua osion ympärille*/
+    margin-top: 10px;
+    border: 3px dotted #a0181c;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.meista-sanottua h2{
+    /*muutetaan otsikon fonttia ja laitetaan se laatikkoon*/
+    text-align: center;
+    width: 100%;
+    background-image: linear-gradient(to right, white, #a0181c, white);
+    padding: 5px;
+    border: 3px solid #a0181c;
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+article div:first-child{
+    /*muutetaan artikkelin ensimmäistä tekstiä siten, että se on oikeassa kohdassa ja sillä on raja*/
+    border-bottom: 3px dotted #a0181c;
+    padding-bottom: 20px;
+}
+
+article div:last-child{
+    /*laitetaan artikkelin toiselle tekstille paddingia*/
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+footer{
+    /*luodaan sivuston ala osaan laatikko*/
+    background-color: #a0181c;
+    border-radius: 0px 0px 15px 15px;
+    padding: 10px;
+}
+
+#ala-osio span{
+    /*laitetaan tiedot osion tekstit vierekkäin*/
+    display: inline-block;
+    width: 110px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+#ala-osio section{
+    /*laitetaan paddingia kaikkiin teksteihin ala osiossa*/
+    font-size: 18px;
+}
+
+#ala-osio section:first-child{
+    /*laitetaan tässä ensimmäisen tekstin päälle paddingia*/
+    padding-top: 10px;
+}
+
+#linkki a{
+    /*tehdään sivuston pohjalla olevat linkit oikean näköisiksi*/
+    color: #a0181c;
+    background-color: #335a16;
+    text-decoration: none;
+    font-family: ‘Merriweather’, Georgia, serif;
+    display: block;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 5px;
+    font-size: 25px;
+}
+
+#linkki{
+    /*poistetaan linkeistä alaviiva ja laitetaan ne oikein*/
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+#ala-logot{
+    /*laitetaan logojen laatikko oikein, että kuvat menevät keskelle*/
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#facebook-logo, #twitter-logo, #youtube-logo, #linkedin-logo{
+    /*muutetaan kuvat oikean kokoisiksi ja muotoisiksi*/
+    width: 50px;
+    margin: 0;
+    margin-top: 10px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+@media only screen and (min-width: 700px){
+
+    h1{
+        /*muutetaan otsikko oikean kokoiseksi*/
+        font-size: 40px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    header img{
+        /*laitetaan kuvat näkyviin ja vierekkäin*/
+        display: block;
+        width: calc(100%/3);
+        border: 2px solid black;
+        margin-bottom: 10px;
+    }
+
+    header img:last-child{
+        /*erotellaan kuvat toisistaan paddingilla*/
+        margin-left: 3px;
+    }
+
+    header img:first-child{
+        margin-right: 3px;
+    }
+
+    header{
+        /*laitetaan headeriin flexboxi, että kuvat menevät vierekkäin*/
+        display: flex;
+        width: 100%;
+    }
+
+    main{
+        /*muutetaan mainia siten, että se antaa tekstien mennä vierekkäin*/
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    main article{
+        /*laitetaan tekstit vierekkäin*/
+        width: 50%;
+        border: none;
+    }
+
+    #ala-osio{
+        width: 50%;
+        float: left;
+    }
+
+    #linkki{
+        width: 50%;
+        float: right;
+    } 
+
+    #linkki a{
+        /*vaihdetaan tekstin kokoa*/
+        font-size: 20px;
+    }
+
+    #ala-osio ul{
+        width: 50%;
+    }
+
+    #ala-logot{
+        /*liatetaan kuvat siten, että ne eivät mene vierekkäin*/
+        clear: both;
+        text-align: left;
+    }
+}
+@media only screen and (min-width: 800px){
+
+    #ala-osio{
+        width: 45%;
+    }
+
+    #linkki{
+        width: 55%;
+        padding-left: 5px;
+    }
+
+    .ajankohtaista{
+        width: 49%;
+        float: left;
+    }
+
+    .meista-sanottua{
+        width: 49%;
+        float: right;
+        margin-top: 0%;
+    }
+
+    footer {
+        /*ala tule rinnalle*/
+        clear: both;
+    }
+
+}
+
+@media only screen and (min-width: 1000px){
+    #yla-osa img{
+        display: inline-block;
+    }
+
+    #yla-osa{
+        display: flex;
+    }
+
+    h1 {
+        width: calc(100% - 400px);
+    }
+
+    aside{
+        width: 33%;
+        float: right;
+    }
+
+    main{
+        width: 67%;
+        float: left;
+    }
+
+    .ajankohtaista{
+        width: 100%;
+        float: none;
+        border-bottom: 0;
+    }
+
+    .meista-sanottua{
+        width: 100%;
+        float: none;
+        border-top: 0;
+    }
+
+    #ala-osio{
+        width: calc(100% / 3);
+        float: left;
+    }
+
+    #ala-osio section{
+        font-size: 15px;
+    }
+
+    #linkki{
+        width: calc(100% / 3);
+        float: left;
+
+    }
+
+    #ala-logot{
+        width: calc(100% / 3);
+        margin-left: 0;
+        margin-right: 0;
+        float: left;
+        clear: none;
+        padding-left: 35px;
+        padding-top: 20px;
+    }
+
+    footer::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
