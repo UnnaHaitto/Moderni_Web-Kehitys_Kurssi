@@ -1,0 +1,92 @@
+#sailio{
+    border: 2px solid rgb(95, 2, 71);
+    padding-bottom: 20px;
+    background-color: rgb(218, 160, 211);
+}
+
+nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+nav li{
+    width: calc(100%/3);
+    text-align: center;
+    border: 2px solid rgb(95, 2, 71);
+    background-color: rgb(140, 3, 145);
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+}
+
+h1{
+    text-align: center;
+    color: rgb(166, 29, 134);
+}
+
+#kirjautunut{
+    text-align: center;
+    color: rgb(140, 3, 145);
+}
+
+#kirjautunut button{
+    background-color: rgb(201, 43, 161);
+}
+
+#ei_rekisteroitunut{
+    text-align: center;
+    color: rgb(140, 3, 145);
+}
+
+#ei_rekisteroitunut button{
+    background-color: rgb(201, 43, 161);
+}
+
+#paa-sivu{
+    text-align: center;
+    color: rgb(140, 3, 145);
+}
+
+#kysymys{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    max-width: 500px;
+    color: rgb(140, 3, 145);
+    border: 2px solid rgb(95, 2, 71);
+}
+
+#vastaus{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    max-width: 500px;
+    color: rgb(140, 3, 145);
+    border: 2px solid rgb(95, 2, 71);
+}
+
+
+
+#esitakysymys{
+    text-align: center;
+}
+
+#laheta{
+    background-color: rgb(201, 43, 161);
+}
+
+#vastaus-kysymys{
+    text-align: center;
+}
+
+#kysymys-nappi{
+    background-color: rgb(201, 43, 161);
+}

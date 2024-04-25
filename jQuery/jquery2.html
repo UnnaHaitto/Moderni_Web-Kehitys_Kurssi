@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery-harjoitus 2</title>
+	<link rel="stylesheet" type="text/css" href="jquery2.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script src="jquery2.js" defer></script>
+</head>
+
+<body>
+
+<div id="teht1">
+	<ul>
+		<li>Web-kehitys
+			<ul>
+				<li>Selaimen puoli (front end)
+					<ul>
+						<li>HTML/CSS</li>
+						<li>Javascript</li>
+					</ul>
+				</li>
+				<li>Palvelimen puoli (back end)
+					<ul>
+						<li>Javascript</li>
+						<li>PHP</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+
+<div id="teht2">
+<h3>Valitse tästä</h3>
+	<select id="valikko1">
+		<option value="valitse" selected>Valitse...</option>
+		<option value="auto">Auto</option>
+		<option value="vene">Vene</option>
+		<option value="lento">Lentoväline</option>
+	</select>
+	<select id="valikko2">
+	
+	</select>
+</div>
+
+<div id="teht3">
+	<h3>Jotain kenttiä</h3>
+	<div id="kentat">
+		<div class="kentta">
+			<input type="text"><button class="poista">Poista</button>
+		</div>
+		<div class="kentta">
+			<input type="text"><button class="poista">Poista</button>
+		</div>
+	</div>
+	<button id="uusi">Lisää kenttä</button>
+</div>
+
+<div id="teht4">
+	<p>Tässä on promoteksti, joka sopeutuu laatikon kokoon. Jos et usko, kokeile pienentää selainikkunaa.</p>
+	
+	<p>Tähän tarvitaan tapahtumankäsittelijää resize.</p>
+</div>
+
+<div id="teht5">
+	<h3>Rekisteröitymislomake</h3>
+	<p><span class="label">Käyttäjätunnus: </span><input type="text" id="tunnus"><span class="ohje">Valitse haluamasi käyttäjätunnus. Tunnus ei saa olla asiaton.</span></p>
+	<p><span class="label">Salasana: </span><input type="password" id="salasana"><span class="ohje">Salasanan tulee olla vähintään 10 merkkiä pitkä.</span></p>
+	<p><span class="label">Sähköposti: </span><input type="email" id="salasana"><span class="ohje">Varmista, että sähköpostiosoitteesi on oikein. Tunnuksesi tulee aktivoida sähköpostin avulla.</span></p>
+</div>
+
+<div id="teht6">
+	<h3>Napsauta nelikulmioita</h3>
+	<div class="uloin">
+		<div class="suuri">
+			<div class="pieni"></div>
+			<div class="pieni"></div>
+		</div>
+		<div class="suuri"></div>
+	</div>
+	<br>
+	<b>Valitse väri: </b>
+	<select id="vari">
+		<option value="#000000">Musta</option>
+		<option value="#ffffff" selected>Valkoinen</option>
+		<option value="#ff0000">Punainen</option>
+		<option value="#00ff00">Vihreä</option>
+		<option value="#0000ff">Sininen</option>
+	</select>
+</div>
+
+<div id="teht7">
+	<h3>Kirjoita 50 merkkiä.</h3>
+	<textarea id="max-50" rows="4" cols="40" maxlength="50"></textarea>
+	<p>Jäljellä <span id="jaljella">50</span> merkkiä.</p>
+</div>
+
+<div id="teht8">
+	<h3>Laskuri</h3>
+	<p><input type="text" id="laskuri" size="10" value="0"></p>
+	<p><button id="kaynnistalaskuri">Käynnistä</button><button id="pysaytalaskuri">Pysäytä</button>
+</div>
+
+</body>
+</html>

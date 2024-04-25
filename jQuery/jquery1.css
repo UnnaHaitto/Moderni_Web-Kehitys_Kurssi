@@ -1,0 +1,44 @@
+#teht1 div {
+	width: 100px;
+	height: 100px;
+	background-color: teal;
+	float: left;
+	margin-right: 20px;
+}
+
+#teht3 {
+	width: 300px;
+	background-color: lightgreen;
+	margin-top: 20px;
+	text-align: center;
+	padding: 10px;
+}
+
+#teht4, #teht5, #teht7, #teht8 {
+	margin-top: 20px;
+}
+
+#teht6 {
+	width: 300px;
+	height: 200px;
+	background-color: tan;
+	margin-top: 20px;
+	padding: 5px;
+}
+
+#teht8 {
+	position: relative;
+}
+
+#pieni-nelio {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 100px;
+	height: 100px;
+	z-index: -1;
+}
+
+#teht8 button {
+	margin-top: 30px;
+}
