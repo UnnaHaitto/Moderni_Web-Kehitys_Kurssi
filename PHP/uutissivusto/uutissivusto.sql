@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.0.2
--- http://www.phpmyadmin.net
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 23.05.2016 klo 18:50
--- Palvelimen versio: 10.0.17-MariaDB
--- PHP Version: 5.6.14
+-- Generation Time: May 03, 2024 at 10:47 AM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -23,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Rakenne taululle `blogi`
+-- Table structure for table `blogi`
 --
 
 CREATE TABLE `blogi` (
@@ -34,7 +35,7 @@ CREATE TABLE `blogi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci;
 
 --
--- Vedos taulusta `blogi`
+-- Dumping data for table `blogi`
 --
 
 INSERT INTO `blogi` (`blogi_id`, `nimi`, `kuvaus`, `kirjoittaja`) VALUES
@@ -44,7 +45,7 @@ INSERT INTO `blogi` (`blogi_id`, `nimi`, `kuvaus`, `kirjoittaja`) VALUES
 -- --------------------------------------------------------
 
 --
--- Rakenne taululle `blogikirjoitus`
+-- Table structure for table `blogikirjoitus`
 --
 
 CREATE TABLE `blogikirjoitus` (
@@ -56,7 +57,7 @@ CREATE TABLE `blogikirjoitus` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci;
 
 --
--- Vedos taulusta `blogikirjoitus`
+-- Dumping data for table `blogikirjoitus`
 --
 
 INSERT INTO `blogikirjoitus` (`kirjoitus_id`, `otsikko`, `teksti`, `julkaisuaika`, `blogi_id`) VALUES
@@ -67,7 +68,7 @@ INSERT INTO `blogikirjoitus` (`kirjoitus_id`, `otsikko`, `teksti`, `julkaisuaika
 -- --------------------------------------------------------
 
 --
--- Rakenne taululle `saa`
+-- Table structure for table `saa`
 --
 
 CREATE TABLE `saa` (
@@ -80,7 +81,7 @@ CREATE TABLE `saa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci;
 
 --
--- Vedos taulusta `saa`
+-- Dumping data for table `saa`
 --
 
 INSERT INTO `saa` (`id`, `vko`, `paiva`, `saatila`, `lampotila`, `tuulennopeus`) VALUES
@@ -95,12 +96,21 @@ INSERT INTO `saa` (`id`, `vko`, `paiva`, `saatila`, `lampotila`, `tuulennopeus`)
 (9, 21, '2016-05-27', 'aurinkoista', 26, 3),
 (10, 21, '2016-05-28', 'aurinkoista', 25, 4),
 (11, 21, '2016-05-29', 'puolipilvistä', 22, 4),
-(12, 22, '2016-05-30', 'puolipilvistä', 21, 5);
+(12, 22, '2016-05-30', 'puolipilvistä', 21, 5),
+(13, 20, '2016-05-18', 'aurinkoista', 100, 100),
+(14, 20, '2016-05-17', 'pilvistä', -50, 10),
+(15, 20, '2016-05-16', 'puolipilvistä, paikoittain tuulista', -80, 11),
+(16, 22, '2016-05-31', 'aurinkoista', 25, 2),
+(17, 22, '2016-06-01', 'puolipilvistä, paikoittain tuulista', 12, 5),
+(18, 22, '2016-06-02', 'aurinkoista', 100, 10),
+(19, 22, '2016-06-03', 'aurinkoista', 1000, 10),
+(20, 22, '2016-06-04', 'pilvistä', -10, 10),
+(21, 22, '2016-06-05', 'puolipilvistä, paikoittain tuulista', -100, 10);
 
 -- --------------------------------------------------------
 
 --
--- Rakenne taululle `uutiset`
+-- Table structure for table `uutiset`
 --
 
 CREATE TABLE `uutiset` (
@@ -113,14 +123,14 @@ CREATE TABLE `uutiset` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci;
 
 --
--- Vedos taulusta `uutiset`
+-- Dumping data for table `uutiset`
 --
 
 INSERT INTO `uutiset` (`uutinen_id`, `otsikko`, `julkaisuaika`, `kirjoittaja`, `sisalto`, `paauutinen`) VALUES
 (1, 'Kaksi lasta eksyneet metsään', '2016-05-02 07:23:00', 'Grimm', 'Puunhakkaajan lapset, poika ja tyttö, ovat kadonneet metsään. Alueella kerrotaan kummia tarinoita, että jossakin metsän siimeksessä olisi sokerista ja leivonnaisista rakennettu talo.', 1),
 (2, 'Vanhus katosi merelle', '2016-04-07 16:20:00', 'Carlo Collodi', 'Vanha puunkaivertajana työskennellyt mies katosi lähdettyään merelle pienellä veneellä etsimään poikaansa. Huhujen mukaan valas nielaisi hänet.', 0),
 (3, 'Tuholaisongelma ratkaistu musiikin voimalla', '2016-05-11 18:42:00', 'Grimm', 'Kaupunkia pitkään piinanneet rotat on saatu vihdoinkin hävitettyä. Tämän ihmeteon takana on salaperäinen pillipiipari.', 0),
-(4, 'Kansantarinoista lastensaduiksi', '2016-05-20 11:30:00', 'Kirjatoukka', 'Kaikkien nykyään tuntemat lastensadut, kuten Lumikki, Pieni Merenneito tai Punahilkka, eivät alkujaan olleet varsinaisesti "sopivia lapsille". Vuosien kuluessa niistä poistettiin liian raakoina pidettyjä piirteitä ja lopetuksia kirjoitettiin uusiksi.\r\n\r\nPienestä merenneidosta kaikki tuntevat luultavasti parhaiten Disneyn version. Pieni merenneito rakastuu pelastamaansa prinssiin, antaa äänensä vastineeksi ihmisen jaloista ja vaikeuksien kautta saa prinssin omakseen. Alkuperäisessä tarinassa...hän saa kyllä ihmisen jalat kävelläkseen ja tanssiakseen, mutta jokainen askel on kuin veitsillä kävelyä. Prinssi menee naimisiin toisen kanssa, ja pieni merenneito kuolee, muuttuen meren vaahdoksi.\r\n\r\nSankarit ja sankarittaret eivät myöskään ole läheskään aina jaloja ja kunniallisia. Herättyään myrkytetystä unestaan - ei tosin prinssin suudelman, vaan palvelijan kompastumisen takia - Lumikki kutsuu pahan kuningattaren häihinsä. Siellä tälle annetaan polttavan kuumat rautakengät, joissa hänen on tanssittava kunnes menehtyy.', 1),
+(4, 'Kansantarinoista lastensaduiksi', '2016-05-20 11:30:00', 'Kirjatoukka', 'Kaikkien nykyään tuntemat lastensadut, kuten Lumikki, Pieni Merenneito tai Punahilkka, eivät alkujaan olleet varsinaisesti \"sopivia lapsille\". Vuosien kuluessa niistä poistettiin liian raakoina pidettyjä piirteitä ja lopetuksia kirjoitettiin uusiksi.\r\n\r\nPienestä merenneidosta kaikki tuntevat luultavasti parhaiten Disneyn version. Pieni merenneito rakastuu pelastamaansa prinssiin, antaa äänensä vastineeksi ihmisen jaloista ja vaikeuksien kautta saa prinssin omakseen. Alkuperäisessä tarinassa...hän saa kyllä ihmisen jalat kävelläkseen ja tanssiakseen, mutta jokainen askel on kuin veitsillä kävelyä. Prinssi menee naimisiin toisen kanssa, ja pieni merenneito kuolee, muuttuen meren vaahdoksi.\r\n\r\nSankarit ja sankarittaret eivät myöskään ole läheskään aina jaloja ja kunniallisia. Herättyään myrkytetystä unestaan - ei tosin prinssin suudelman, vaan palvelijan kompastumisen takia - Lumikki kutsuu pahan kuningattaren häihinsä. Siellä tälle annetaan polttavan kuumat rautakengät, joissa hänen on tanssittava kunnes menehtyy.', 1),
 (5, 'Kuninkaalliset häät: Lasikenkä yhdisti rakastavaiset', '2016-05-16 04:41:00', 'Grimm', 'Kuninkaallisissa tanssiaisissa prinssi tanssi koko illan tuntemattoman kaunottaren kanssa, joka katosi paikalta kertomatta kuka on. Jälkeensä hän jätti vain lasisen kengän.\r\n\r\nPitkällisen etsinnän jälkeen prinssi löysi vihdoin neidon, jolle kenkä sopii. Neidon kerrotaan olevan hyvästä perheestä, mutta kovin köyhässä asemassa, käytännössä palvelija.\r\n\r\nTästä huolimatta prinssi ja neito ovat menossa naimisiin, ja häistä povataan vuosisadan suurimpia. Kaikki merkittävät aateliset on kutsuttu. Parin tulevan lapsen nimeäkin arvuutellaan jo. Onko se kenties Noki?', 1);
 
 --
@@ -161,21 +171,26 @@ ALTER TABLE `uutiset`
 --
 ALTER TABLE `blogi`
   MODIFY `blogi_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `blogikirjoitus`
 --
 ALTER TABLE `blogikirjoitus`
   MODIFY `kirjoitus_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `saa`
 --
 ALTER TABLE `saa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
 --
 -- AUTO_INCREMENT for table `uutiset`
 --
 ALTER TABLE `uutiset`
   MODIFY `uutinen_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

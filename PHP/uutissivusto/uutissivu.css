@@ -5,6 +5,14 @@
     border: 4px solid #cc0099;
 }
 
+#paivamaara-valikko{
+    border: 2px solid #ff99ff;
+    background-color: transparent;
+    font-size: 1.17rem;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
 #otsikko-osio{
     text-align: center;
     font-style: italic;

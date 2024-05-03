@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="uutissivu.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="uutissivu.js" defer></script>
     <title>Document</title>
 </head>
 <body>
@@ -15,7 +17,13 @@
     </div>
 
     <section>
-        <h3>Viikos sää - Viikko 21</h3>
+        <h3>Viikos sää -
+            <select name="" id="paivamaara-valikko">
+                <option value="20">Viikko 20</option>
+                <option value="21" selected>Viikko 21</option>
+                <option value="22">Viikko 22</option>
+            </select>
+        </h3>
         <div id="saa-laatikko">
             <?php
 
