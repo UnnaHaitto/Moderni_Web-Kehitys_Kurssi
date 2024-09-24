@@ -1,0 +1,53 @@
+*{
+    font-family: 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(253, 211, 218);
+}
+
+#postauksen_tekeminen{
+    background-color: rgb(102, 79, 84);
+    border: solid 2px rgb(85, 70, 77);
+    display: inline-block;
+    padding: 20px;
+    background-image: url("pexels-photo-2101187.jpeg");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 70%;
+    width: 100%;
+    color: rgb(207, 174, 179);
+    font-weight: bold;
+}
+
+h3{
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+    color: rgb(207, 174, 179);
+}
+
+#napukka{
+    background-color: rgb(102, 79, 84);
+    color: rgb(207, 174, 179);
+    font-weight: bold;
+}
+
+#postauksen_tiedot, #postauksen_tiedot p {
+    margin: 0;
+    padding: 0;
+}
+
+.postaus{
+    padding: 10px;
+    margin-top: 10px;
+    background-color: rgb(102, 79, 84);
+    border: solid 2px rgb(85, 70, 77);
+    color: rgb(207, 174, 179);
+}
+
+#viesti{
+    font-weight: bold;
+    font-size: 20px;
+}
